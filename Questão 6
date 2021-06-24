@@ -1,0 +1,2 @@
+apenas o *(pulo + 2) referencia o valor do 3° elemento.
+o pulo + 2 referencia o espaço na memória do 3° elemento.
