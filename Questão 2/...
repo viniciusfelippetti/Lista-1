@@ -1,0 +1,6 @@
+Pela ordem temos:
+Endereço que p associou da variável i, que supusemos ser 4094;
+Valor associado ao ponteiro mais 2 = 7;
+valor associado ao ponteiro que é = 5;
+3 vezes o valor que aponta p = 15;
+O valor que aponta p mais 4 = 9.
