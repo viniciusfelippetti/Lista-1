@@ -1,0 +1,23 @@
+p = i;
+Expressão ilegal, pois p deverá armazenar um endereço.
+
+q = &j;
+Legal, q é um ponteiro que armazena um endereço.
+
+p = &*&i;
+Legal, p é um ponteiro que armazena um endereço.
+
+i = (*&)j;
+Ilegal, sintaxe incorreta devido ‘)’.
+
+i = *&j;
+Legal, i armazena um valor.
+
+i = *&*&j;
+Legal, i armazena um valor.
+
+q = *p;
+Ilegal, pois q não armazena um endereço.
+
+i = (*p)++ + *q;
+Legal, incrementa o valor associado ao ponteiro +  o valor associado ao ponteiro q.
