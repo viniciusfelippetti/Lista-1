@@ -1,0 +1,21 @@
+ Partindo de X = 4092.
+ 
+     X como CHAR
+X+1, pula 1 byte, 4093; 
+X+2, pula 2 bytes, 4094; 
+X+3, pula 3 bytes, 4095.
+
+     X como INT
+X+1, pula 2 bytes, 4094;
+X+2, pula 4 bytes, 4096;
+X+3, pula 6 bytes, 4098.
+
+     X como FLOAT
+X+1, pula 4 bytes, 4096.
+X+2, pula 8 bytes, 49100.
+X+3, pula 12 bytes, 49104.
+
+     X como DOUBLE
+X+1, pula 8 bytes, 4100.
+X+2, pula 16 bytes, 4108
+X+3, pula 24 bytes, 4116.
