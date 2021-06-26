@@ -1,0 +1,4 @@
+1° - Válida, p recebe o valor da posição 1 do vetor (elemento 2).
+2° - Inválido, erro de sintaxe no incremento do ponteiro(++).
+3° - Inválido, erro de sintaxe no incremento do ponteiro(++).
+4° - válida, x recebe o valor do vetor na posição 0 + 1.
