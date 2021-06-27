@@ -1,0 +1,22 @@
+Ponteiro para uma função guarda o local de memória da função do algoritmo implementado.
+
+
+#include <stdio.h>
+#include <stdlib.h>
+	
+  void compara(int s, int t) {
+       	return(s - t   );
+    	}
+int main(void)
+{
+
+    	int (*ponteiro)(int,int) = compara;
+
+ int s=2,t=1;
+ printf("Programa A- B\n");
+ printf("Primeiro valor A\nSegundo valor B\n");
+ scanf("%d %d",&s,&t);
+
+
+    printf("Subtracao de dois elementos: %d\n", (*ponteiro)(s,t));
+}
