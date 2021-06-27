@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void Matrizz(int **q, int **w, int **e, int nl_q, int nc_q, int nc_w) {
+    int cont = 0;
+    for(int i = 0; i < nl_q; i++) {
+        for(int j = 0; j < nc_w; j++) {
+            for(int k = 0; k < nc_q; k++) {
+                cont += q[i][k] * w[k][j];
+            }
+
+            e[i][j] = cont;
+        }}}
+
+void Imprimir(int **matrix, int nl, int nc) {
+    printf("\n");
+    for(int i=0; i < nl; i++) {
+        printf("  ");
+        for(int j=0; j < nc; j++) {
+            printf(" %4d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+}
+
+int** MatriX(int nl, int nc) {
+
+    int **matrix = (int **)malloc(nl * sizeof(int *));
+
+    for(int i=0; i < nl; i++) {
+        matrix[i] = (int *)malloc(nc * sizeof(int));
+    }
+
+    return matrix;
+}
+
+void ValoresMatriz(int **matrix, int nl, int nc) {
+
+    for(int i = 0; i < nl; i++) {
+        for(int j = 0; j < nc; j++){
+            matrix[i][j] = rand() % 100;
+        }
+    }
+}
+
+int main() {
+
+    int nl_x, nc_x, nl_b, nc_y;
+
+    printf("Quantas linhas na matriz 1: ");
+    scanf("%d", &nl_x);
+    printf("Quantas colunas na matriz 1: ");
+    scanf("%d", &nc_x);
+    printf("Quantas linhas na matriz 2: ");
+    scanf("%d", &nl_b);
+    printf("Quantas colunas na matriz 2: ");
+    scanf("%d", &nc_y);
+    printf("\n");
+
+    int **x = MatriX(nl_x, nc_x);
+    int **y = MatriX(nl_b, nc_y);
+    int **z = MatriX(nl_x, nc_y);
+
+   srand(time(0));
+   ValoresMatriz(x, nl_x, nc_x);
+   ValoresMatriz(y, nl_b, nc_y);
+
+    Matrizz(x, y, z, nl_x, nc_x, nc_y);
+    printf("\nMatriz A: \n");
+    Imprimir(x, nl_x, nc_x);
+    printf("Matriz B: \n");
+    Imprimir(y, nl_b, nc_y);
+    printf("Matriz C: \n");
+    Imprimir(z, nl_x, nc_y);
+
+    free(x);
+    free(y);
+    free(z);
+
+    return 0;
+}
