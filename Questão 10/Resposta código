@@ -1,0 +1,42 @@
+CHAR
+Pula de 1 em 1 byte
+
+Int e Float
+Pula de 4 em 4 bytes
+
+Double
+Pula de 8 em 8 bytes
+
+CODIGO USADO PARA O TESTE:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+char x[4],*p;
+p = &x;
+for(int i=1;i<=3;i++){
+    printf("Valor da memoria eh: %d \n", p+i);
+}
+printf("\n");
+int y[4],*q;
+q = &y;
+for(int i=1;i<=3;i++){
+    printf("Valor da memoria eh: %d \n", q+i);
+}
+printf("\n");
+float u[4],*t;
+t = &u;
+for(int i=1;i<=3;i++){
+    printf("Valor da memoria eh: %d \n", t+i);
+}
+printf("\n");
+double c[4],*v;
+v = &u;
+for(int i=1;i<=3;i++){
+    printf("Valor da memoria eh: %d \n", v+i);
+}
+
+}
+
+
