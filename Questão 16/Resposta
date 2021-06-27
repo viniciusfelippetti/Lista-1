@@ -1,0 +1,86 @@
+//codigo questao 16, usando 3 numeros (2, 4, 10), tempo de resposta: 0.000055seg.
+#include <stdlib.h>
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+int compare (const void * a, const void * b)
+{
+  return ( *(int*)a - *(int*)b );
+}
+int main(void)
+{
+    clock_t cmc_t, fim_t;
+    int n;
+    printf("Digite a quantidade de valores: \n");
+    scanf("%d",&n);
+    //declaracao do ponteiro
+    float *valores;
+    //inclusao da quantidade de bytes
+      valores = (float *) malloc(n * sizeof(float));
+      for (int i =0; i<n; i++){
+          printf("Digite os valores: \n");
+          scanf("%f",&valores[i]);
+     cmc_t = clock();
+      }
+     //ordenacao dos elementos
+       cmc_t = clock();
+     void (*ptr_qsrot)(void *valores, size_t n, size_t size, int(*compar)(const void *, const void *));
+     ptr_qsrot = qsort;
+     ptr_qsrot(valores, n, sizeof(float), compare);
+      //Resultado
+     printf("REsultado ordenado: \n");
+     for (int i =0; i<n; i++)
+     {
+         printf(" %f",valores[i]);
+     }
+      printf("\n");
+//liberando espaco
+free(valores);
+ fim_t = clock();
+  printf(" %fseg\n", (double)(fim_t - cmc_t) / CLOCKS_PER_SEC);
+}
+
+//codigo questao 15, usando 3 numeros (2,4,10), tempo: 0.000036seg
+
+#include <stdlib.h>
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+int compare (const void * a, const void * b)
+{
+  return ( *(int*)a - *(int*)b );
+}
+int main(void)
+{
+    clock_t cmc_t, fim_t;
+    int n;
+    printf("Digite a quantidade de valores: \n");
+    scanf("%d",&n);
+    //declaracao do ponteiro
+    float *valores;
+    //inclusao da quantidade de bytes
+      valores = (float *) malloc(n * sizeof(float));
+      for (int i =0; i<n; i++){
+          printf("Digite os valores: \n");
+          scanf("%f",&valores[i]);
+      }
+       fim_t = clock();
+      //ordenando os elementos usando qsort
+       cmc_t = clock();
+      qsort (valores, n, sizeof(float), compare);
+       fim_t = clock();
+       //Resultado
+      printf("REsultado ordenado: \n");
+      for (int i =0; i<n; i++)
+      {
+          printf(" %f",valores[i]);
+      }
+      printf("\n\n");
+      //mostrando o tempo
+      fim_t = clock();
+      printf("REsposta de tempo: \n");
+       printf(" %fseg\n", (double)(fim_t - cmc_t) / CLOCKS_PER_SEC);
+      printf("\n");
+//liberando espaco
+free(valores);
+}
